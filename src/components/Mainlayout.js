@@ -1,13 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet } from 'react-native'
 import React from 'react';
 import Pictures from '../theme/Pictures';
 
 
-const Mainlayout = () => {
+const Mainlayout = ({ children, style }) => {
   return (
-    <View style={styles.container}>
-      <Image source={Pictures.background} />
-    </View>
+    <ImageBackground
+      source={Pictures.background}
+      style={[styles.container, style]}
+      resizeMode="cover">
+      {children}
+    </ImageBackground>
   )
 }
 
@@ -16,6 +19,5 @@ export default Mainlayout
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#050404',
   }
 })

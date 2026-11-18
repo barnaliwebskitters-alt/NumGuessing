@@ -1,12 +1,17 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
-import Pictures from '../theme/Pictures'
+import Mainlayout from '../components/Mainlayout'
+import Button from '../components/Button'
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-     <Image source={Pictures.background}/>
-    </View>
+    <Mainlayout>
+      <View style={styles.container} >
+
+
+      <Button/>
+      </View>
+    </Mainlayout>
   )
 }
 
@@ -15,6 +20,5 @@ export default HomeScreen
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: '#050404',
     }
 })
