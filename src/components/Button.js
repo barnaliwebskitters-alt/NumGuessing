@@ -6,10 +6,12 @@ import {
   StyleSheet,
   View,
   ActivityIndicator,
+  Image,
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 import color from '../theme/color';
+import Fonts from '../theme/Fonts';
 
 
 
@@ -29,7 +31,7 @@ const Button = ({
     <ActivityIndicator color={color.white} />
   ) : (
     <>
-      {icon && <View style={styles.icon}>{icon}</View>}
+      {icon && <Image style={styles.icon} source={icon} />}
 
       <Text style={[styles.buttonText, textStyle]}>
         {title}
@@ -71,10 +73,12 @@ export default Button;
 
 const styles = StyleSheet.create({
   buttonWrapper: {
-    width: '100%',
-    minHeight: 52,
+    width: '80%',
+    minHeight: 55,
     borderRadius: 30,
     overflow: 'hidden',
+    alignSelf: 'center',
+    marginVertical: 10,
   },
 
   buttonContent: {
@@ -96,13 +100,16 @@ const styles = StyleSheet.create({
   buttonText: {
     color: color.white,
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
     textAlign: 'center',
   },
 
   icon: {
     alignItems: 'center',
     justifyContent: 'center',
+    width: 20,
+    height: 20,
+    tintColor: color.white,
   },
 
   pressed: {
